@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import TodoList from "./TodoList";
+import { useState } from "react";
 
+//コンポーネントー＞役割分担しやすい
 function App() {
+  const [todos, setTodos] = useState(["Todo1","Todo2"]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <TodoList todos ={todos}/>
+      <input type="text" />
+      <button>タスクを追加</button>
+      <button>完了したタスクの削除</button>
+      <div>残りのタスク:0</div>
+    </>
   );
 }
+
 
 export default App;
